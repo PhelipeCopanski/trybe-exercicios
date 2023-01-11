@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+
+    <form action="" method="GET">
+        <fieldset>
+            <label for="fullname">Nome completo:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Digite seu nome completo" minlength="10"
+                maxlength="40" required>
+            <br><br>
+            <label for="input-email">E-mail:</label>
+            <input type="email" name="email" id="input-email" placeholder="Digite seu e-mail" minlength="10"
+                maxlength="50" required>
+            <br><br>
+            <p>Destino Preferido:</p>
+            <label for="destino1">
+                <input type="radio" name="destino" id="destino1" value="Cidade">Cidade
+            </label>
+            <label for="destino2">
+                <input type="radio" name="destino" id="destino2" value="Campo">Campo
+            </label>
+            <label for="destino3">
+                <input type="radio" name="destino" id="destino3" value="Pria">Pria
+            </label>
+            <label for="destino4">
+                <input type="radio" name="destino" id="destino4" value="Montanha">Montanha
+            </label>
+            <br><br>
+            <label for="why">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+            <br>
+            <textarea name="justificativa" id="why" cols="50" rows="10" maxlength="500"
+                placeholder="Digite sua resposta vencedora aqui"></textarea>
+            <br><br>
+            <label for="input-data">Data:</label>
+            <input type="date" name="data" id="input-data">
+            <br><br>
+            <label for="concordo">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos
+                futuros.</label>
+            <input type="checkbox" name="concordo" id="concordo">
+            <br><br>
+            <button type="submit" id="buttun-submit" disabled>Enviar</button>
+            <button type="reset">Limpar</button>
+        </fieldset>
+    </form>
+    <script>
+        const button = document.querySelector('#buttun-submit')
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+        function enableSubmit() {
+            const agreement = document.querySelector('#concordo');
+            button.disabled = !agreement.checked;
+        }
+        window.onload = function () {
+            const agreement = document.querySelector('#concordo');
+            agreement.addEventListener('change', enableSubmit);
+        };
+    </script>
+</body>
+
+</html>
