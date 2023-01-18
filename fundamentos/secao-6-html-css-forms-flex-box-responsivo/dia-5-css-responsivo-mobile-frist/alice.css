@@ -1,0 +1,42 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+  }
+
+@media screen and (max-width: 600px) { /* Telas de celular. (Mobile divices)*/
+    body {
+        background-color: aqua;
+    }
+
+    .container {
+        flex-direction: column;
+      }
+
+    p {
+        padding: 0 5px;
+        line-height: 1.5em;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+}
