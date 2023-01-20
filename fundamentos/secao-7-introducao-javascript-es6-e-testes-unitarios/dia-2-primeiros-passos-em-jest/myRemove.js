@@ -9,3 +9,6 @@ function myRemove(arr, item) {
   }
   
   // implemente seus testes aqui
+
+  // console.log(myRemove([1, 2, 3], 2));
+  module.exports = { myRemove };
